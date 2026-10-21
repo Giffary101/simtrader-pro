@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  simtrader-backend:
+    image: golang:1.22-alpine
+    container_name: simtrader-backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+    command: sh -c "go mod tidy && go run main.go"
+    restart: unless-stopped
+
+  simtrader-frontend:
+    image: node:20-alpine
+    container_name: simtrader-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    depends_on:
+      - simtrader-backend
+    restart: unless-stopped

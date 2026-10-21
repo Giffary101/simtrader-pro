@@ -1,0 +1,21 @@
+{
+  "idrBalance": 100000000,
+  "usdtRate": 16000,
+  "botRunning": true,
+  "botNetProfitIdr": 0,
+  "botWinCount": 0,
+  "botLossCount": 0,
+  "lastBotTradeCandleTime": 0,
+  "botConfig": {
+    "pair": "BTC/USDT",
+    "timeframe": "15m",
+    "leverage": 10,
+    "marginPercent": 10,
+    "takeProfitPercent": 15,
+    "stopLossPercent": 10,
+    "maxPositions": 1,
+    "thresholdScore": 65
+  },
+  "activePositions": [],
+  "tradeHistory": []
+}
